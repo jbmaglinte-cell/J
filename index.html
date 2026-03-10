@@ -5,11 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Proposal</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #525659; }
-        iframe { border: none; width: 100%; height: 100%; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; font-family: sans-serif; background-color: #525659; }
+        
+        /* Container for the PDF */
+        .pdf-container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        iframe {
+            flex-grow: 1;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Mobile fallback button */
+        .mobile-link {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-link { display: none; } /* Hide button on laptops */
+        }
     </style>
 </head>
 <body>
-    <iframe src="Proposal.pdf"></iframe>
+
+    <div class="pdf-container">
+        <a href="Proposal.pdf" class="mobile-link" target="_blank">
+           📱 Phone user? Click here to open/download full PDF
+        </a>
+
+        <iframe src="Proposal.pdf"></iframe>
+    </div>
+
 </body>
 </html>
